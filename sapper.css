@@ -16,7 +16,7 @@ h1{
     box-sizing: padding-box;
 
     position: fixed; 
-    bottom:50%; 
+    bottom:30%; 
     right:30%;
 
     color: rgba(255, 255, 255, 0);
@@ -29,7 +29,7 @@ h1{
     box-sizing: padding-box;
 
     position: fixed; 
-    bottom:30%; 
+    bottom:10%; 
     right:30%;
 
     color: rgba(255, 255, 255, 0);
