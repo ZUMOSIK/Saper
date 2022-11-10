@@ -8,6 +8,9 @@ let game = false;
 let flag = false;
 loseT = document.querySelector("h1")
 
+const flagBTN = document.querySelector("#flag")
+const lopataBTN = document.querySelector("#lopata")
+
 let blocks = Array();
 
 canvas.width = countBlock * sizeBlock;
@@ -16,14 +19,16 @@ canvas.height = countBlock * sizeBlock;
 let bombImg = new Image();
 let flagImg = new Image();
 
-LoadAllImages()
+LoadBombImg()
+LoadFlagImg()
 
-async function LoadAllImages(){
-    bombImg = await LoadImage("img/bomb.jpg");
-    flagImg = await LoadImage("img/flag.jpg");
-    console.log(bombImg,flagImg);
+async function LoadBombImg(){
+    bombImg = await LoadImage("img/" + Math.floor(Math.random() * 21) + ".jpg");
 }
 
+async function LoadFlagImg(){
+    flagImg = await LoadImage("img/flag.jpg");
+}
 
 function LoadImage(src){
     return new Promise (resolve =>{
@@ -33,6 +38,20 @@ function LoadImage(src){
     })
 }
 
+let flagLopata = 1
+
+
+flagBTN.onclick = function(){
+    flagLopata = 0
+    flagBTN.style.boxShadow = "12px 12px 2px 1px rgb(0, 0, 0)"
+    lopataBTN.style.boxShadow = "0px 0px 0px 0px rgb(0, 0, 0)"
+}
+
+lopataBTN.onclick = function(){
+    flagLopata = 1
+    lopataBTN.style.boxShadow = "12px 12px 2px 1px rgb(0, 0, 0)"
+    flagBTN.style.boxShadow = "0px 0px 0px 0px rgb(0, 0, 0)"
+}
 
 
 function plusOne(h,w) {
@@ -50,6 +69,9 @@ function plusOne(h,w) {
 
 
 function start(sh,sw) {
+
+    LoadBombImg()
+    
     loseT.style.opacity = "0%"
     blocks = Array();
     
@@ -118,7 +140,7 @@ function draw() {
                 }
                 if (blocks[h][w].number == 10){
                         
-                    console.log("flag")
+
                     ctx.drawImage(flagImg, w*sizeBlock, h*sizeBlock, 40, 40);
                     continue;
                 }
@@ -158,7 +180,6 @@ setInterval(draw,25);
 canvas.addEventListener('mousedown',function(event){
     
     
-    
     let h = Math.floor((event.clientY/sizeBlock));
     let w = Math.floor((event.clientX/sizeBlock));
     
@@ -166,24 +187,21 @@ canvas.addEventListener('mousedown',function(event){
        start(h,w);
     }
     
-    if (event.button != 2){
+    if (flagLopata == 1){
         if (blocks[h][w].number == 9) {
-            console.log('lose');
             game = false;
             Lose()
         }
         flag = false;
     }
     else{
-        
         if (blocks[h][w].number == 9){
             flag = true
             blocks[h][w].number = 10
-            console.log(blocks[h][w].show)
+
         }
         else{
-            console.log('lose');
-            console.log(blocks[h][w])
+
             game = false;
             Lose()
         }

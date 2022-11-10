@@ -11,3 +11,30 @@ h1{
     font-size: 60px;
     opacity: 0%;
 }
+
+#flag{
+    box-sizing: padding-box;
+
+    position: fixed; 
+    bottom:50%; 
+    right:30%;
+
+    color: rgba(255, 255, 255, 0);
+    font-size: 60px;
+    background-image: url(img/saperBTN.png);
+    background-size: cover;
+    box-shadow: 0px 0px 0px 0px rgb(0, 0, 0);
+}
+#lopata{
+    box-sizing: padding-box;
+
+    position: fixed; 
+    bottom:30%; 
+    right:30%;
+
+    color: rgba(255, 255, 255, 0);
+    font-size: 60px;
+    background-image: url(img/lopataBTN.png);
+    background-size: cover;
+    box-shadow: 12px 12px 2px 1px rgb(0, 0, 0);
+}
