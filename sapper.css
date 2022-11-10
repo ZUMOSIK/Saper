@@ -1,0 +1,13 @@
+
+html{
+    padding: 0;
+    margin: 0
+}
+
+h1{
+    margin-left: 50%;
+    margin-top: -50vh;
+    color: red;
+    font-size: 60px;
+    opacity: 0%;
+}
