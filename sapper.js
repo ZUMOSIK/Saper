@@ -133,7 +133,7 @@ function draw() {
                 if(blocks[h][w].number == 9) {
                 
                     
-                    ctx.drawImage(bombImg, w*sizeBlock, h*sizeBlock, 40, 40);
+                    ctx.drawImage(bombImg, w*sizeBlock, h*sizeBlock, 50, 50);
                     
                     continue;
                     
@@ -141,7 +141,7 @@ function draw() {
                 if (blocks[h][w].number == 10){
                         
 
-                    ctx.drawImage(flagImg, w*sizeBlock, h*sizeBlock, 40, 40);
+                    ctx.drawImage(flagImg, w*sizeBlock, h*sizeBlock, 50, 50);
                     continue;
                 }
                 
@@ -150,7 +150,7 @@ function draw() {
                 
                 if(blocks[h][w].number) {
                     
-                    ctx.font = "32px serif";
+                    ctx.font = "35px serif";
                     ctx.fillStyle = "#ddd";
                     ctx.fillText(blocks[h][w].number, w*sizeBlock + 10, (h+1)*sizeBlock - 10);
                     
