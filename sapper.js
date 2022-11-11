@@ -1,8 +1,8 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
-let countBlock = 20;
-let sizeBlock = 40;
+let countBlock = 15;
+let sizeBlock = 60;
 let CB = 0.1;
 let game = false;
 let flag = false;
