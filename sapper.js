@@ -2,7 +2,7 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
 let countBlock = 15;
-let sizeBlock = 60;
+let sizeBlock = 50;
 let CB = 0.1;
 let game = false;
 let flag = false;
